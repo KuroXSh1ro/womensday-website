@@ -1,0 +1,95 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #fbcad6;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 10px;
+  margin: 0;
+}
+
+#content {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+#sp{
+  height: 10%;
+}
+
+#img01 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100;
+  /* Chiều rộng tối đa bằng 90% chiều rộng khung hình */
+  height: auto;
+  /* Chiều cao tối đa bằng 90% chiều cao khung hình */
+  object-fit: contain;
+  /* Giữ nguyên tỷ lệ ảnh mà không bị méo */
+  border-radius: 10px;
+}
+
+/* Ẩn nội dung ban đầu */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+/* Hiệu ứng xuất hiện */
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.5s ease-in-out;
+}
+
+/* Hiệu ứng mờ dần */
+.fade {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+
+h1 {
+  font-size: 2.5em;
+  color: #e60073;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 50%;
+  /* Giữ cố định vị trí */
+  left: 50%;
+  /* Đưa về giữa trang */
+  transform: translateX(-50%);
+  /* Căn giữa theo chiều ngang */
+  width: 100%;
+  /* Chỉ vừa đủ nội dung, không bị dàn hàng ngang */
+  white-space: normal;
+  /* Tránh tự động xuống dòng */
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Điều chỉnh cho điện thoại */
+@media screen and (max-width: 600px) {
+  h1 {
+      font-size: 1.8em;
+  }
+
+  img {
+      max-width: 90%;
+  }
+}

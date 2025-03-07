@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Day</title>
+    <link rel="icon" type="image/png" href="rose.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <iframe id="youtube-background" width="0" height="0" 
+    src="https://www.youtube.com/embed/Ri3WsPDi4MY?autoplay=1&loop=1&playlist=Ri3WsPDi4MY"
+    frameborder="0" allow="autoplay">
+</iframe>
+
+
+</head>
+
+<body>
+    
+    <div id="content">
+        <h1 class="visible">Chào bạn</h1>
+        <h1 class="hidden">Dạo này bạn thế nào?</h1>
+        <h1 class="hidden">Hôm nay là 8/3 đấy :></h1>
+        <h1 class="hidden">Mình có cái này dành cho bạn</h1>
+        <img id="img01" class="hidden" src="meocamhoa.jpg" alt="Bó hoa" width="500" height="400">
+        <h1 class="hidden">Mình xin tặng bạn bó hoa này (*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ</h1>
+        <h1 class="hidden">Và tiếp đây nữa :3</h1>
+        <img id="img01" class="hidden" src="Meotanghoa.jpg" alt="Bó hoa" width="500" height="400">
+        <h1 class="hidden">Tiếp nữa nè (ෆ˙ᵕ˙ෆ)♡</h1>
+        <img id="img01" class="hidden" src="meoomhoa.jpg" alt="Bó hoa" width="500" height="400">
+        <h1 class="hidden">Uầy, người đẹp vẫn còn xem nè (∩˃o˂∩)♡</h1>
+        <h1 class="hidden">Cái cuối nè, mình hứa lun (๑>؂•̀๑)</h1>
+        <img id="img01" class="hidden" src="Flowers.png" alt="Bó hoa" width="500" height="400">
+        <h1 class="hidden">Cảm ơn bạn đã dành thời gian ra xem</h1>
+        <h1 class="hidden">Chúc bạn có một ngày 8/3 vui vẻ!<br>
+            Mãi luôn xinh đẹp, hạnh phúc, tươi tắn và thành công trong cuộc sống nhé!<img src="PaimonHeart.png"
+                alt="Paimon" width="40" height="40">
+        </h1>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll("#content > *");
+            let index = 0;
+
+            function showNext() {
+                if (index > 0) {
+                    let prevIndex = index - 1;
+                    // Chỉ ẩn phần tử trước nếu nó KHÔNG phải phần tử cuối cùng
+                    if (prevIndex < elements.length - 1) {
+                        elements[prevIndex].classList.add("fade");
+
+                        setTimeout(() => {
+                            elements[prevIndex].classList.remove("visible");
+                            elements[prevIndex].classList.add("hidden");
+                        }, 1500);
+                    }
+                }
+
+                if (index < elements.length) {
+                    elements[index].classList.remove("hidden", "fade");
+                    elements[index].classList.add("visible");
+
+                    // Nếu chưa phải phần tử cuối cùng, tiếp tục hiển thị dòng tiếp theo
+                    if (index < elements.length - 1) {
+                        setTimeout(showNext, 4000);
+                    }
+                }
+
+                index++;
+            }
+
+            setTimeout(showNext, 3000); // Bắt đầu sau 3s
+        });
+
+    </script>
+
+</body>
+
+</html>
